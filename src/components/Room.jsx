@@ -12,8 +12,6 @@ const Room = ({ filteredData }) => {
     //     return dates.id;
     // })
 
-    console.log(filteredData);
-
     return (
         <div className="room-container">
             {filteredData.map((room, i) => {
@@ -25,7 +23,9 @@ const Room = ({ filteredData }) => {
                                 <Card.Title>£{room.roomPrice}, {room.location} </Card.Title>
 
                                     <Link
-                                        to={room.booked ? '#' : '/roomBooking/room' }
+                                        to={
+                                            // room.booked ? '#' : add thios to block link
+                                            '/roomBooking/room' }
                                         state={
                                             {
                                                 data: { ...room },
@@ -33,9 +33,9 @@ const Room = ({ filteredData }) => {
                                             }
                                         }>
 
-                                        <Button variant="info" size="lg" disabled={room.booked}>
-                                            {room.booked ?
-                                                <h5> Unavailable </h5>
+                                        <Button variant="info" size="lg">
+                                            {room.orderDate ?
+                                                <h5> Limited availability </h5>
                                                 :
                                                 <h5> See More </h5>}
                                         </Button>
