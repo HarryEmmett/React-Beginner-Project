@@ -11,9 +11,9 @@ const BookRoom = ({ searchQuery }) => {
 
     useEffect(() => {
         const getData = async () => {
+            setData('');
             const data = await axios.get('http://localhost:8080/getAllRooms');
             const response = data.data;
-            console.log(response)
             setData(response);
             setLoading(false);
 
