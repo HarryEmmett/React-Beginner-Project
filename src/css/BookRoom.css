@@ -1,0 +1,11 @@
+.room-parent{
+    display: flex;
+    justify-content: center;
+}
+.card{
+    color: rebeccapurple;
+}
+
+.card-body{
+    background-color: teal;
+}
